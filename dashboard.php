@@ -1,3 +1,4 @@
+dashboard.php
 <?php
 session_start();
 ?>
@@ -43,10 +44,7 @@ background: white;
 padding: 10px 20px;
 margin-left: 220px;
 display: flex;
-justify-content: flex-end;
-1/8/26, 9:51 AM dashboard.php
-localhost:35513/a0587256-3b8f-4e53-be11-b9ada6af26b5/ 1/3
-align-items: center;
+justify-content: flex-end;align-items: center;
 border-bottom: 1px solid #ddd;
 }
 .profile-btn {
@@ -86,23 +84,22 @@ padding: 20px;
 }
 </style>
 </head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <body>
 <div class="sidebar">
 <h2>Dashboard</h2>
-<a href="#">Home</a>
-<a href="#">List Produk</a>
-1/8/26, 9:51 AM dashboard.php
-localhost:35513/a0587256-3b8f-4e53-be11-b9ada6af26b5/ 2/3
-<a href="#">Customer</a>
-<a href="#">Transaksi</a>
-<a href="#">Laporan</a>
+<a href="dashboard.php">Home</a>
+<a href="dashboard.php?page=produk">List Produk</a>
+<a href="dashboard.php?page=customer">Customer</a>
+<a href="dashboard.php?page=transaksi">Transaksi</a>
+<a href="dashboard.php?page=laporan">Laporan</a>
 </div>
 <div class="header">
 <div class="dropdown">
 <div class="profile-btn" onclick="toggleMenu()">Profile ▾</div>
 <div class="dropdown-content" id="profileMenu">
 <a href="dashboard.php?page=profile">My Profile</a>
-<a href="#">Logout</a>
+<a href="dashboard.php?page=logout">Logout</a>
 </div>
 </div>
 </div>

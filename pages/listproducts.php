@@ -41,8 +41,7 @@ padding: 10px;
 border-bottom: 1px solid #ddd;
 text-align: center;
 }
-1/15/26, 8:48 AM listproducts.php
-localhost:42127/8b4abb6d-e2c8-413d-8246-aaac16710a69/ 1/2
+.php
 th {
 background: #f8f8f8;
 }

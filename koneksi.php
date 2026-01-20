@@ -1,4 +1,5 @@
 <?php
+$koneksi = mysqli_connect("localhost", "root", "", "db_penjualan");
 $host = "localhost";
 $username = "root"; // Default XAMPP adalah root
 $password = "";     // Default XAMPP adalah kosong
