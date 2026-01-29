@@ -1,4 +1,3 @@
-dashboard.php
 <?php
 session_start();
 ?>
@@ -44,7 +43,8 @@ background: white;
 padding: 10px 20px;
 margin-left: 220px;
 display: flex;
-justify-content: flex-end;align-items: center;
+justify-content: flex-end;
+align-items: center;
 border-bottom: 1px solid #ddd;
 }
 .profile-btn {
@@ -89,7 +89,7 @@ padding: 20px;
 <div class="sidebar">
 <h2>Dashboard</h2>
 <a href="dashboard.php">Home</a>
-<a href="dashboard.php?page=produk">List Produk</a>
+<a href="dashboard.php?page=product">List Produk</a>
 <a href="dashboard.php?page=customer">Customer</a>
 <a href="dashboard.php?page=transaksi">Transaksi</a>
 <a href="dashboard.php?page=laporan">Laporan</a>
@@ -100,17 +100,40 @@ padding: 20px;
 <div class="dropdown-content" id="profileMenu">
 <a href="dashboard.php?page=profile">My Profile</a>
 <a href="dashboard.php?page=logout">Logout</a>
+<a href="dashboard.php?page=tambahproduk.php" class="btn btn-success btn-sm">+ Tambah Produk</a>
 </div>
 </div>
 </div>
 <div class="content">
 <?php
-$page = $_GET['page'] ?? 'home';
-$file = "pages/$page.php";
-if (file_exists($file)) {
-include $file;
+// Contoh di dalam dashboard.php
+if(isset($_GET['page'])){
+    $page = $_GET['page'];
+
+    switch ($page) {
+        case 'product':
+            include "pages/produk.php"; // Tambahkan nama folder 'pages/'
+            break;
+            
+        case 'tambahproduct.php': 
+            include "pages/tambahproduk.php"; // Arahkan ke folder pages
+            break;
+
+            case 'editproduct.php': 
+                include "pages/editproduk.php"; // Arahkan ke folder pages
+                break;
+
+                case 'hapusproduct.php': 
+                    include "pages/hapusproduk.php"; // Arahkan ke folder pages
+                    break;
+                    
+        default:
+            include "pages/produk.php"; // Halaman awal dashboard
+            break;
+    }
 } else {
-echo "<h2>Welcome Dashboard</h2>";
+    // Tampilan default jika variabel 'page' tidak ada di URL
+    echo "<h3>Selamat Datang di Dashboard</h3>";
 }
 ?>
 </div>

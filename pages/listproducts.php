@@ -1,5 +1,5 @@
 <?php
-include '../koneksi.php';
+include __DIR__ . '../koneksi.php';
 $data = mysqli_query($conn, "SELECT * FROM barang");
 ?>
 <style>
@@ -49,7 +49,7 @@ background: #f8f8f8;
 <div class="card">
 <div class="card-header">
 <h3>List Produk</h3>
-<a href="dashboard.php?page=tambah" class="btn btn-tambah">+ Tambah Produk</a>
+
 </div>
 <table>
 <tr>
