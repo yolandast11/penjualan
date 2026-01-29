@@ -115,15 +115,15 @@ if(isset($_GET['page'])){
             include "pages/produk.php"; // Tambahkan nama folder 'pages/'
             break;
             
-        case 'tambahproduct.php': 
+        case 'tambahproduk.php': 
             include "pages/tambahproduk.php"; // Arahkan ke folder pages
             break;
 
-            case 'editproduct.php': 
+            case 'editproduk.php': 
                 include "pages/editproduk.php"; // Arahkan ke folder pages
                 break;
 
-                case 'hapusproduct.php': 
+                case 'hapusproduk.php': 
                     include "pages/hapusproduk.php"; // Arahkan ke folder pages
                     break;
                     
