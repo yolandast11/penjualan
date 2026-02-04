@@ -10,8 +10,8 @@ if (isset($_POST['simpan'])) {
     $satuan = $_POST['satuan'];
 
     // Perhatikan: langsung panggil variabel koneksi tanpa label 'mysql:'
-    $query = mysqli_query($koneksi, "INSERT INTO barang (kode_barang, nama_barang, kategori, stok, satuan) 
-                                     VALUES ('$kode', '$nama', '$kat', '$stok', '$satuan')");
+    $query = mysqli_query($koneksi, "INSERT INTO barang (kode_barang, nama_barang, harga, kategori, stok, satuan) 
+                                     VALUES ('$kode', '$nama', '$harga', '$kat', '$stok', '$satuan')");
 
     if ($query) {
         echo "<script>alert('Data Berhasil Disimpan'); window.location='dashboard.php?page=produk.php';</script>";
