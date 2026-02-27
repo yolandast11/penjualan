@@ -89,9 +89,9 @@ padding: 20px;
 <div class="sidebar">
 <h2>Dashboard</h2>
 <a href="dashboard.php">Home</a>
-<a href="dashboard.php?page=product">List Produk</a>
-<a href="dashboard.php?page=customer">Customer</a>
-<a href="dashboard.php?page=transaksi">Transaksi</a>
+<a href="dashboard.php?page=product&group=product">List Produk</a>
+<a href="dashboard.php?page=customer.php&group=customer.php">Customer</a>
+<a href="dashboard.php?page=transaksi.php&group=transaksi.php">Transaksi</a>
 <a href="dashboard.php?page=laporan">Laporan</a>
 </div>
 <div class="header">
@@ -112,23 +112,57 @@ if(isset($_GET['page'])){
 
     switch ($page) {
         case 'product':
-            include "pages/produk.php"; // Tambahkan nama folder 'pages/'
+            include "pages/produk/produk.php"; // Tambahkan nama folder 'pages/'
             break;
             
         case 'tambahproduk.php': 
-            include "pages/tambahproduk.php"; // Arahkan ke folder pages
+            include "pages/produk/tambahproduk.php"; // Arahkan ke folder pages
             break;
 
-            case 'editproduk.php': 
-                include "pages/editproduk.php"; // Arahkan ke folder pages
+        case 'editproduk.php': 
+                include "pages/produk/editproduk.php"; // Arahkan ke folder pages
                 break;
 
-                case 'hapusproduk.php': 
-                    include "pages/hapusproduk.php"; // Arahkan ke folder pages
+        case 'hapusproduk.php': 
+                    include "pages/produk/hapusproduk.php"; // Arahkan ke folder pages
                     break;
+
+         // --- BAGIAN CUSTOMER (Berdasarkan tabel MariaDB kamu) ---
+         case 'customer.php':
+            include "pages/customer/customer.php";
+            break;
+
+        case 'tambahcustomer.php':
+            include "pages/customer/tambahcustomer.php";
+            break;
+
+        case 'hapus_customer.php':
+            include "pages/customer/hapus_customer.php";
+            break;
+
+        case 'editcustomer.php':
+            include "pages/customer/editcustomer.php";
+            break;
+
+        // --- BAGIAN TRANSAKSI (Berdasarkan tabel MariaDB kamu) ---
+        case 'transaksi.php':
+            include "pages/transaksi/transaksi.php";
+            break;
+
+        case 'tambahtransaksi.php':
+            include "pages/transaksi/tambahtransaksi.php";
+            break;
+
+        case 'detail_transaksi.php':
+            include "pages/transaksi/detail_transaksi.php";
+            break;
+            
+        case  'hapus_transaksi.php':
+            include "pages/transaksi/hapus_transaksi.php";
+            break;
                     
         default:
-            include "pages/produk.php"; // Halaman awal dashboard
+            include "pages/produk/produk.php"; // Halaman awal dashboard
             break;
     }
 } else {
